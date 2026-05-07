@@ -1,0 +1,39 @@
+<html1>
+    <title>Cadastro de Clientes</title>
+    <body>
+        <form method="post">
+            {%csrf_token %}
+            <h1>Preencha os dados abaixo</h1>
+            {{form.as_p}}
+            <button type="submit">Salvar</button>
+            </form>
+            <!--Lista de Cliente-->
+            <table border="1">
+                <thead>
+                    <th>ID do Cliente</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Data de Nascimento</th>
+                    <th>ações</th>
+                </thead>
+                <tbody>
+                    {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.id }}</td>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.cpf }}</td>
+                        <td>{{cliente.telefone }}</td>
+                        <td>{{ cliente.nascimento }}</td>
+                        <td>
+                            <a href="">Editar</a>
+                            <a href="">Excluir</a>
+                            <a href=''
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html1>

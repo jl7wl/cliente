@@ -1,0 +1,11 @@
+<htm
+    <title>Cadastro de clientes</title>
+    <body>
+        <form method="post">
+            {%csrf_token %}
+            <h1>Preencha os dados abaixo</h1>
+            {{form.as_p}}
+            <button type="submit">Salvar</button>
+        </form>
+    </body>
+</html>
