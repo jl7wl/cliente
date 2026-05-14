@@ -20,6 +20,7 @@ from django.urls import path
 from clientes import views
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('atualizar-cliente/<int:id>/', views.atualizar_cliente, name='atualizar_cliente'),
     path('exculir-cliente/<int:id>/', views.excluir_cliente, name='excluir_cliente'),

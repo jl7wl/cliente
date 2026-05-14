@@ -42,6 +42,8 @@ def atualizar_cliente(request, id):
         else:
             print(form.errors)
             return HttpResponse('<h1>Erro na atualização do cliente</h1>')
+        
+
 
     form = ClienteForm(instance=cliente)
     template_name = 'novo_cliente.html'
@@ -61,6 +63,7 @@ def excluir_cliente(request, id):
     except Cliente.DoesNotExist:
         return HttpResponse('<h1>Erro ao excluir o cliente. Não encontrado</h1>')
     return redirect('novo_cliente')
+
 
 def login_usuario(request):
     template_name = 'login.html'
@@ -82,6 +85,9 @@ def login_usuario(request):
     context = {'form': form}
         
     return render(request, template_name, context)
+
+
+
 
 def novo_usuario(request):
     template_name = 'novo_usuario.html'

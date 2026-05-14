@@ -42,6 +42,8 @@ def atualizar_cliente(request, id):
         else:
             print(form.errors)
             return HttpResponse('<h1>Erro na atualização do cliente</h1>')
+        
+
 
     form = ClienteForm(instance=cliente)
     template_name = 'novo_cliente.html'

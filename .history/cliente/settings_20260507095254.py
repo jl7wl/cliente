@@ -9,28 +9,27 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
+
 import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(_file_).resolve().parent.parent
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 APPS_DIR = str(BASE_DIR / "apps")
-sys.path.insert(0,APPS_DIR)
-
+sys.path.insert(0, APPS_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qam#js^xc#!aarx*0u07)^2fibrate$#t+-l6e=d7=2ge=cy'
+SECRET_KEY = 'django-insecure-$yuny%+$vu3h(9wbw3yjss%d@+%0lxt^f-(+*7m9x1s=rlayol'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["*"]
 
-LOGIN_URL = '/login/'
+ALLOWED_HOSTS = []
+
 
 # Application definition
 
@@ -41,19 +40,18 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 PROJETO_APPS = [
     'clientes.apps.ClientesConfig',
 ]
 
-TERCEIROS_APPS = []
+TERCEIRO_APPS = []
 
-INSTALLED_APPS = DJANGO_APPS + PROJETO_APPS + TERCEIROS_APPS
+INSTALLED_APPS = DJANGO_APPS + PROJETO_APPS + TERCEIRO_APPS
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',    
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,11 +124,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
-
-STATIC_URL = 'static/'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = 'static/'

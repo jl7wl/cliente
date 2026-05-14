@@ -6,17 +6,13 @@ class ClienteForm(forms.ModelForm):
     nome = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control"}))
     cpf = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control"}))
     telefone = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control"}))
-    nascimento = forms.CharField(widget=forms.DateInput(attrs={"class": "form-control", "type": "date"}))
+    nascimento = forms.CharField(widget=forms.PasswordInput(attrs={"class": "form-control", "type": "date"}))
 
     class Meta:
         model = Cliente 
         fields = '_all_'
-        
+
 class UsuárioForm(forms.ModelForm):
-    first_name = forms.CharField(label='nome', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_name = forms.CharField(label= 'Sobrenome', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    username = forms.CharField(label='usuário', widget=forms.TextInput(attrs={'class': 'form-control'}))
-    password = forms.CharField(label='Senha', widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = User
