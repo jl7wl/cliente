@@ -102,4 +102,4 @@ def novo_usuario(request):
     @login_request
     def sair(request):
      logout(request)
-     return redirect('login_usuario')
+     return redirect('login_usuario')653

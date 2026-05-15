@@ -89,7 +89,7 @@ def novo_usuario(request):
         form = UsuarioForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
-            f.set_password(f.password)
+            f.set_password(f.passoword)
             f.save()
             return redirect('login_usuario')
         else:
@@ -100,6 +100,6 @@ def novo_usuario(request):
     return render(request, template_name, context)
 
     @login_request
-    def sair(request):
-     logout(request)
-     return redirect('login_usuario')
+    def sair(request)
+    logout(request)
+    redirect('')

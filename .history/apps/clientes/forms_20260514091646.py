@@ -9,8 +9,8 @@ class ClienteForm(forms.ModelForm):
     nascimento = forms.CharField(widget=forms.DateInput(attrs={"class": "form-control", "type": "date"}))
 
     class Meta:
-            model = Cliente
-            fields = '__all__'
+        model = Cliente 
+        fields = '__all__'
         
 class UsuarioForm(forms.ModelForm):
     first_name = forms.CharField(label='nome', widget=forms.TextInput(attrs={'class': 'form-control'}))
